@@ -11,7 +11,7 @@ on: # Quando o evento deve executar
 jobs: # Construção passo a passo da sua tarefa
   build: # Etapa de construção/criação
 
-    runs-on: # Em qual plataforma vai rodar
+    runs-on: ubuntu-latest # Em qual plataforma vai rodar
 
     steps: # Passo a passo da etapa de build
     - uses: actions # Definição da ação do GitHub, exemplo actions/merge@v2, funciona como uma biblioteca
@@ -19,7 +19,9 @@ jobs: # Construção passo a passo da sua tarefa
     - name: Setup Python version
       uses: actions # Novamente escolher uma lib de ação
       with:
-        python-version: ''
+        python-version: '3.*'
+
+    - name: 
 
     - name: Run test # name define o nome de uma seção no passo a passo, nesse caso é a ultima etapa, rodar testes
       run: python -m unittest discover -s . # Comando que deve ser executado na máquina/robo que nosso arquivo montou
